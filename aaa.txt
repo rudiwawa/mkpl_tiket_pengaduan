@@ -1,0 +1,8 @@
+http://localhost/matkul/mkpl/Tiket/index.php/C_user/user_view/10
+http://localhost/matkul/mkpl/Tiket/C_user/newforward/10
+http://localhost/matkul/mkpl/Tiket/index.php/C_user/user_tiket
+
+DELETE
+C_user method newforward()
+C_user method  addForward()
+C_user_forward
