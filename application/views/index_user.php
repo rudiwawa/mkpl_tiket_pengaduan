@@ -208,7 +208,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <span class="title">Ticket</span>
                             </a>
                         </li>
-
+                        <li class="nav-item  ">
+                            <a href="<?php echo site_url('C_user_forward') ?>" class="nav-link nav-toggle">
+                                <i class="fa fa-mail-forward"></i>
+                                <span class="title">Forward</span>
+                            </a>
+                        </li>
                     </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>

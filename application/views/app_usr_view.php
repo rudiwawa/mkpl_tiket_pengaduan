@@ -215,7 +215,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <span class="title">Ticket</span>
                             </a>
                         </li>
- 
+                        <li class="nav-item  ">
+                            <a href="<?php echo site_url('C_user_forward') ?>" class="nav-link nav-toggle">
+                                <i class="fa fa-mail-forward"></i>
+                                <span class="title">Forward</span>
+                            </a>
+                        </li>
                     </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
@@ -389,7 +394,9 @@ License: You must have a valid license purchased only from themeforest(the above
             echo '<button type="submit" style="float:right" class="btn blue">Submit</button>';
             echo '</div>';
             echo '</form>';
-
+            if($key['forward_status']==0 && $last>0){
+                echo '<a href= "'.base_url().'C_user_forward/newforward/'.$key['tiketID'].'" type="submit" margin-right: 15px" class="btn red">Forward</a>';
+            }
             echo '</div>';
             echo '</div>';
             echo '</div>';
