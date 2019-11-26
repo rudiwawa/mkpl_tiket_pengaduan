@@ -27,6 +27,13 @@
                                 <span class="title">My Ticket</span>
                             </a>
                         </li>
+                        <li class="nav-item start active open">
+                            <a href="<?php echo base_url(); ?>C_News" class="nav-link nav-toggle">
+                                <i class="fa fa-newspaper-o"></i>
+                                <span class="title">News</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
                         <!-- <li class="nav-item  ">
                             <a href="<?php echo base_url(); ?>C_News" class="nav-link nav-toggle">
                                 <i class="fa fa-newspaper-o"></i>
