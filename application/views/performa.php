@@ -1,13 +1,44 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<?php
-$data['notif'] = $notif;
-$data['jumlahNotif'] = $jumlahNotif  ;    
-$this->load->view('admin/header_admin',$data);
-$data['aktif'] = "performa";  
-$this->load->view('admin/navbar_admin',$data);
-?>
+?><!DOCTYPE html> 
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.5
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+    <?php
+    $data['judul']= "Performance"; 
+    $this->load->view('admin/part/head',$data) ?>
+    </head>
+    <!-- END HEAD -->
+
+    <body class="page-container-bg-solid page-header-fixed page-sidebar-fixed">
+        <!-- BEGIN HEADER -->
+        <?php $this->load->view('admin/part/navbar') ?>
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <?php $this->load->view('admin/part/sidebar') ?>
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <!-- BEGIN CONTENT BODY -->
@@ -152,6 +183,7 @@ jQuery(function(){
             <!-- END CONTENT -->
         </div>
         <!-- END CONTAINER -->
-        <?php
-    $this->load->view('admin/footer_admin',$data);
- ?>
+        <?php $this->load->view('admin/part/js') ?>
+    </body>
+
+</html>
