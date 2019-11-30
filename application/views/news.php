@@ -1,16 +1,14 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<!-- 
+<!DOCTYPE html>
+<!--  
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
 Version: 4.7.5
 Author: KeenThemes
 Website: http://www.keenthemes.com/
 Contact: support@keenthemes.com
 Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes 
 Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Purchase: http://themeforest.net/item/ metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
@@ -23,10 +21,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic Admin Theme #4 | Managed Datatables</title>
+        <title>Metronic Admin Theme #4 | Bootstrap Form Controls</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta content="Preview page of Metronic Admin Theme #4 for managed datatable samples" name="description" />
+        <meta content="Preview page of Metronic Admin Theme #4 for bootstrap inputs, input groups, custom checkboxes and radio controls and more" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
@@ -34,26 +32,63 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?php echo base_url(); ?>/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
-        <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
-        <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="<?php echo base_url(); ?>/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?php echo base_url(); ?>/assets/pages/css/search.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <link href="<?php echo base_url(); ?>/assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
         <link href="<?php echo base_url(); ?>/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> </head>
+        <style>
+        @-webkit-keyframes placeHolderShimmer {
+          0% {
+            background-position: -468px 0;
+          }
+          100% {
+            background-position: 468px 0;
+          }
+        }
+
+        @keyframes placeHolderShimmer {
+          0% {
+            background-position: -468px 0;
+          }
+          100% {
+            background-position: 468px 0;
+          }
+        }
+
+        .content-placeholder {
+          display: inline-block;
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+          -webkit-animation-name: placeHolderShimmer;
+          animation-name: placeHolderShimmer;
+          -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+          background: #f6f7f8;
+          background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+          background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+          background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+          -webkit-background-size: 800px 104px;
+          background-size: 800px 104px;
+          height: inherit;
+          position: relative;
+        }
+        </style>
     <!-- END HEAD -->
 
     <body class="page-container-bg-solid page-header-fixed page-sidebar-fixed">
@@ -72,9 +107,9 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN RESPONSIVE MENU TOGGLER -->
                 <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
                 <!-- END RESPONSIVE MENU TOGGLER -->
-                <!-- BEGIN PAGE TOP --> 
+                <!-- BEGIN PAGE ACTIONS -->
+                <!-- BEGIN PAGE TOP -->
                 <div class="page-top">
-                    
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
                             <li class="separator hide"> </li>
@@ -84,8 +119,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
                             <li class="separator hide"> </li>
                             <!-- BEGIN INBOX DROPDOWN -->
+                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                             <?php
-                                $userID = $this->session->userdata('ses_id');  
+                                $clientID = $this->session->userdata('ses_id'); 
+                
+                                
                             ?>
                             <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
@@ -102,15 +140,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
                                             <?php
                                                 foreach ($notif->result_array() as $key3) {
-                                                    if($key3['userID'] == '0' || $key3['userID'] == $userID) {
+                                                    if($key3['clientID'] == $clientID) {
                                                         
-                                                            if($key3['tipe'] == '1'){
-                                                                $tipe = "Tiket";
-                                                            } else if($key3['tipe'] == '2'){
+                                                            if($key3['type'] == '1'){
                                                                 $tipe = "Reply";
-                                                            } else {
-                                                                $tipe = "Forward";
-                                                            }
+                                                            } else if($key3['type'] == '2'){
+                                                                $tipe = "News";
+                                                            } 
                                                             $panjangN = strlen($key3['id']);
                                                             $notID=$key3['id'];
                                                             for($i = 5;$i > $panjangN;$i--){
@@ -121,7 +157,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     
                                             ?>
                                             <li>
-                                                <a href="<?php echo base_url().'C_user/notif_view/'.$key3['id'].'/'.$key3['notifID'].'/'.$key3['tipe'] ?>">
+                                                <a href="<?php echo base_url().'C_client_tiket/notif_view/'.$key3['id'].'/'.$key3['notifID'] ?>">
                                                     <span class="subject">
                                                         <span class="from"> New <?php echo $tipe;?> with ID <?php echo $notID ?>  </span>
                                                         <span class="time"><?php echo $time ?> </span>
@@ -151,11 +187,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <?php if ($this->session->userdata('ses_foto') == null) {
                                     echo '<img alt="" class="img-circle" src="'.base_url().'/assets/layouts/layout4/img/avatar.png" /> </a>';
                                     } else {
-                                    echo '<img alt="" class="img-circle" src="'.base_url().'/assets/apps/img/user/'.$this->session->userdata('ses_foto').'" /> </a>';
+                                    echo '<img alt="" class="img-circle" src="'.base_url().'/assets/apps/img/client/'.$this->session->userdata('ses_foto').'" /> </a>';
                                     } ?>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
-                                        <a href="<?php echo site_url('C_user/profile') ?>">
+                                        <a href="<?php echo site_url('C_client/profile') ?>">
                                             <i class="icon-user"></i> My Profile </a>
                                     </li>
                                     <li class="divider"> </li>
@@ -193,23 +229,23 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
                     <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                    <li class="nav-item ">
-                        <a href="<?php echo site_url('C_user') ?>">
+                        <li class="nav-item  ">
+                            <a href="<?php echo site_url('C_client') ?>" class="nav-link nav-toggle">
                                 <i class="fa fa-home"></i>
                                 <span class="title">Home</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item start active open  ">
-                            <a href="<?php echo site_url('C_user/user_tiket') ?>">
-                                <i class="fa fa-ticket"></i>
-                                <span class="title">Ticket</span>
                             </a>
                         </li>
                         <li class="nav-item  ">
-                            <a href="<?php echo site_url('C_user_forward') ?>" class="nav-link nav-toggle">
-                                <i class="fa fa-mail-forward"></i>
-                                <span class="title">Forward</span>
+                            <a href="<?php echo site_url('C_client_tiket') ?>" class="nav-link nav-toggle">
+                                <i class="fa fa-ticket"></i>
+                                <span class="title">My Ticket</span>
+                            </a>
+                        </li>
+                        <li class="nav-item start active open">
+                            <a href="<?php echo base_url(); ?>C_News" class="nav-link nav-toggle">
+                                <i class="fa fa-newspaper-o"></i>
+                                <span class="title">News</span>
+                                <span class="selected"></span>
                             </a>
                         </li>
                     </ul>
@@ -226,80 +262,34 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="page-head">
                         <!-- BEGIN PAGE TITLE -->
                         <div class="page-title">
-                            <h1>Ticket
+                            <h1>News
                             </h1>
-                            <br>
                         </div>
                         <!-- END PAGE TITLE -->
                     </div>
                     <!-- END PAGE HEAD-->
-                    <!-- BEGIN PAGE BREADCRUMB -->
                     <!-- END PAGE BREADCRUMB -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="search-page search-content-1">
+                        <div class="row">
+                            <div class="col-md-10">
                             <div class="portlet light bordered">
-                                <div class="portlet-body">
-                                    <table class="table table-striped table-bordered table-hover table-header-fixed" id="sample_1">
-                                        <thead>
-                                            <tr>
-                                                <th > ID Ticket </th>
-                                                <th> Subject</th>
-                                                <th> Client Name </th> 
-                                                <th> Staff Name </th>
-                                                <th> Department </th>
-                                                <th> Status </th>
-                                                <th> Date/Time </th>
-                                                <th> Actions </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php  
-   foreach ($tiket->result_array() as $key) {
-       if ($key['status'] == '0') {
-                    $stat = 'Open';
-                    } else {
-                        $stat = 'Closed';
-                    }
-                    $panjang = strlen($key['tiketID']);
-                    $id=$key['tiketID'];
-                    for($i = 5;$i > $panjang;$i--){
-                        $id = "0".$id;
-                    }
-                    $id = "#".$id;
-                    foreach ($user->result_array() as $key5){
-                        if($key['userID'] === "0"){
-                            $nama = "-";
-                        } else if ($key['userID']===$key5['userID']) {
-                            $nama = $key5['user_name'];
-                        }
-                    }
-                echo '<tr class="odd gradeX" data-messageid="'.$key['tiketID'].'" id="'.$key['tiketID'].'">';
-                echo '<td class="view-message">'.$id.'</td>';
-                echo '<td class="view-message">'.$key['title'].'</td>';
-                echo '<td class="view-message hidden-xs" > '.$key['fullname'].' </td>';
-                echo '<td class="view-message">'.$nama.'</td>';
-                echo '<td class="view-message">'.$key['Nama_Department'].'</td>';
-                if ($key['status'] == '0') {
-                    echo '<td class="view-message inbox-small-cells "><span class="label label-sm label-success"> '.$stat.' </span></td>';
-                } else {
-                    echo '<td class="view-message inbox-small-cells"><span class="label label-sm label-danger">'.$stat.'</span></td>';
-                }
-                echo '<td class="view-message text-right">'.date("d F Y h:i", strtotime($key['date_post'])).'</td>';
-                echo '<td><a href='.site_url('C_user/user_view/'.$key['tiketID']).' class="btn yellow"> View </a></td></tr>'; 
-   }
-?>
-                                        </tbody>
-                                    </table>
+                                    
+                                <div class="search-container bordered">
+                                    <ul>
+                                    <div id="load_data"></div>
+                                    <div id="load_data_message"></div>
+                                    </ul>
                                 </div>
                             </div>
-                            <!-- END EXAMPLE TABLE PORTLET-->
+                            </div>
                         </div>
                     </div>
                     <!-- END PAGE BASE CONTENT -->
                 </div>
                 <!-- END CONTENT BODY -->
             </div>
+            <!-- END CONTENT -->
         </div>
         <!-- END CONTAINER -->
         <!--[if lt IE 9]>
@@ -307,7 +297,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url(); ?>/assets/global/plugins/excanvas.min.js"></script> 
 <script src="<?php echo base_url(); ?>/assets/global/plugins/ie8.fix.min.js"></script> 
 <![endif]-->
-        <!-- BEGIN CORE PLUGINS -->
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
@@ -316,47 +305,85 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="<?php echo base_url(); ?>/assets/global/scripts/datatable.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/moment.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/horizontal-timeline/horizontal-timeline.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="<?php echo base_url(); ?>/assets/global/scripts/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="<?php echo base_url(); ?>/assets/pages/scripts/table-datatables-fixedheader.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>/assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="<?php echo base_url(); ?>/assets/layouts/layout4/scripts/layout.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/layouts/layout4/scripts/demo.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
-        
         <!-- END THEME LAYOUT SCRIPTS -->
+        <script>
+  $(document).ready(function(){
+
+    var limit = 3;
+    var start = 0;
+    var action = 'inactive';
+
+    function lazzy_loader(limit)
+    {
+      var output = '';
+      for(var count=0; count<limit; count++)
+      {
+        output += '<p align="right"><span class="content-placeholder" style="width:40%; margin-right:45%; height: 40px;">&nbsp;</span></p>';
+        output += '<p align="right"><span class="content-placeholder" style="width:85%; height: 100px;">&nbsp;</span></p>';
+      }
+      $('#load_data_message').html(output);
+    }
+
+    lazzy_loader(limit);
+
+    function load_data(limit, start)
+    {
+      $.ajax({
+        url:"<?php echo base_url(); ?>C_News/fetch",
+        method:"POST",
+        data:{limit:limit, start:start},
+        cache: false,
+        success:function(data)
+        {
+          if(data == '')
+          {
+            $('#load_data_message').html('<h3>No More Result Found</h3>');
+            action = 'active';
+          }
+          else
+          {
+            $('#load_data').append(data);
+            $('#load_data_message').html("");
+            action = 'inactive';
+          }
+        }
+      })
+    }
+
+    if(action == 'inactive')
+    {
+      action = 'active';
+      load_data(limit, start);
+    }
+
+    $(window).scroll(function(){
+      if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive')
+      {
+        lazzy_loader(limit);
+        action = 'active';
+        start = start + limit;
+        setTimeout(function(){
+          load_data(limit, start);
+        }, 1000);
+      }
+    });
+
+  });
+</script>                                                
         <script>
             $(document).ready(function()
             {

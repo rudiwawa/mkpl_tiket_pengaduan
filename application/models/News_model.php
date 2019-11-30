@@ -8,10 +8,13 @@
 			$this->load->database();
 		}
  
-		function getAllData($offset,$limit){
-			$query = " SELECT * FROM news ORDER BY date_post DESC LIMIT {$offset},{$limit}";
-			$stmt = $this->db->query( $query );
-			return $stmt;
+		function getAllData($limit,$start){
+			$this->db->select("*");
+			$this->db->from("news");
+			$this->db->order_by("date_post", "DESC");
+			$this->db->limit($limit, $start);
+			$query = $this->db->get();
+			return $query;
 		}
 
 		function getAllData2($offset,$limit){

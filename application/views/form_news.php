@@ -1,6 +1,4 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <!-- 
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
 Version: 4.7.5
@@ -20,10 +18,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="en">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
-
+ 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic Admin Theme #4 | Inbox</title>
+        <title>New News</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #4 for user inbox" name="description" />
@@ -37,7 +35,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <link href="<?php echo base_url(); ?>/assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
@@ -45,6 +43,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="<?php echo base_url(); ?>/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN PAGE LEVEL STYLES -->
         <link href="<?php echo base_url(); ?>/assets/apps/css/inbox.min.css" rel="stylesheet" type="text/css" />
@@ -53,20 +52,16 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="<?php echo base_url(); ?>/assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>/assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
         <link href="<?php echo base_url(); ?>/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
-        <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="favicon.ico" />
-         </head>
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
     <!-- END HEAD -->
-
-    <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+    <body class="page-container-bg-solid page-header-fixed page-sidebar-fixed">
         <!-- BEGIN HEADER -->
         <div class="page-header navbar navbar-fixed-top">
             <!-- BEGIN HEADER INNER -->
             <div class="page-header-inner ">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
-                    <a href="index.html">
-                        <img src="<?php echo base_url(); ?>/assets/layouts/layout4/img/logo-light.png" alt="logo" class="logo-default" /> </a>
+                        <img src="<?php echo base_url(); ?>/assets/pages/img/logoNakula.png" style="height: 36px; margin-top:18px;" alt="logo" class="logo-default" />
                     <div class="menu-toggler sidebar-toggler">
                         <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
                     </div>
@@ -77,17 +72,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- END RESPONSIVE MENU TOGGLER -->
                 <!-- BEGIN PAGE ACTIONS -->
                 <!-- DOC: Remove "hide" class to enable the page header actions -->
-                <h1 style="display: inline-block;">GA ADA OBAT</h1>
-                <div class="page-top">
-                    <form class="search-form" action="page_general_search_2.html" method="GET">
-                        <div class="input-group">
-                            <input type="text" class="form-control input-sm" placeholder="Search..." name="query">
-                            <span class="input-group-btn">
-                                <a href="javascript:;" class="btn submit">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </span>
-                        </div>
+                <!-- BEGIN PAGE TOP -->
+                <div class="page-top">>
                     </form>
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
@@ -97,103 +83,74 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
                             <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
                             <li class="separator hide"> </li>
-                            <!-- BEGIN INBOX DROPDOWN -->
-                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                             <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <i class="icon-bell"></i>
-                                    <span class="badge badge-info"> 4 </span>
+                                    <i class="icon-bell"></i><?php if($jumlahNotif > 0){?>
+                                    <span class="badge badge-info"><?php echo $jumlahNotif; ?>  </span><?php }?>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="external">
                                         <h3>You have
-                                            <span class="bold">7 New</span> Messages</h3>
-                                        <a href="app_inbox.html">view all</a>
+                                            <span class="bold"><?php echo $jumlahNotif?> New</span> Notifications</h3>
+                                        
                                     </li>
                                     <li>
                                         <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                            <?php
+                                                foreach ($notif->result_array() as $key3) {
+                                                            if($key3['type'] == '1'){
+                                                                $tipe = "open";
+                                                            } else if($key3['type'] == '2'){
+                                                                $tipe = "close";
+                                                            } 
+                                                            $panjangN = strlen($key3['notifID']);
+                                                            $notID=$key3['notifID'];
+                                                            for($i = 5;$i > $panjangN;$i--){
+                                                                $notID = "0".$notID;
+                                                            }
+                                                            $notID = "#".$notID;
+                                                            $time = $key3['time'];
+                                                    
+                                            ?>
                                             <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="<?php echo base_url(); ?>/assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+                                                <a href="<?php echo base_url().'C_admin/notif_view/'.$key3['tiketID'].'/'.$key3['notifID'] ?>">
                                                     <span class="subject">
-                                                        <span class="from"> Lisa Wong </span>
-                                                        <span class="time">Just Now </span>
+                                                    <?php if ($tipe == "open") {
+                                                    ?>
+                                                        <span class="from"> New Ticket <?php echo $tipe;?> with ID <?php echo $notID ?> </span>
+                                                    <?php }
+                                                    else if($tipe == "close"){?>
+                                                    <span class="from"> Ticket with ID <?php echo $notID ?> Closed </span>
+                                                    <?php
+                                                    }?>
+                                                        <span class="time"><?php echo $time ?> </span>
                                                     </span>
-                                                    <span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                    <span class="message"> </span>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="<?php echo base_url(); ?>/assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Richard Doe </span>
-                                                        <span class="time">16 mins </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="<?php echo base_url(); ?>/assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Bob Nilson </span>
-                                                        <span class="time">2 hrs </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="<?php echo base_url(); ?>/assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Lisa Wong </span>
-                                                        <span class="time">40 mins </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="<?php echo base_url(); ?>/assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Richard Doe </span>
-                                                        <span class="time">46 mins </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
+                                            <?php
+                                                }
+                                                if($jumlahNotif==0) {
+                                                    echo '<li>';
+                                                    echo '<span class="subject"><br>';
+                                                    echo '<span class="message"><font color="white" size="3">No Notification</font></span>';
+                                                    echo '</span>';
+                                                    echo '</li>';
+                                                    }
+                                            ?>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown dropdown-user dropdown-dark">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <span class="username username-hide-on-mobile"> Nick </span>
+                                    <span class="username username-hide-on-mobile"> Admin </span>
                                     <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                                    <img alt="" class="img-circle" src="<?php echo base_url(); ?>/assets/layouts/layout4/img/avatar9.jpg" /> </a>
+                                    <img alt="" class="img-circle" src="<?php echo base_url(); ?>/assets/layouts/layout4/img/avatar.png" /> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
-                                    <li>
-                                        <a href="user_profil.html">
-                                            <i class="icon-user"></i> My Profile </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_inbox.html">
-                                            <i class="icon-envelope-open"></i> My Inbox
-                                            <span class="badge badge-danger"> 3 </span>
-                                        </a>
-                                    </li>
                                     <li class="divider"> </li>
                                     <li>
-                                        <a href="page_user_lock_1.html">
-                                            <i class="icon-lock"></i> Lock Screen </a>
-                                    </li>
-                                    <li>
-                                        <a href="page_user_login_1.html">
+                                        <a href="<?php echo site_url('C_login/logout') ?>">
                                             <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>
@@ -213,7 +170,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN CONTAINER -->
         <div class="page-container">
             <!-- BEGIN SIDEBAR -->
-            <div class="page-sidebar-fixed">
+            <div class="page-sidebar-wrapper">
                 <!-- BEGIN SIDEBAR -->
                 <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                 <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
@@ -227,32 +184,57 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
                     <ul class="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                     <li class="nav-item ">
-                        <a href="<?php echo site_url('C_admin') ?>">
+                            <a href="<?php echo site_url('C_admin') ?>" class="nav-link nav-toggle">
                                 <i class="fa fa-home"></i>
                                 <span class="title">Home</span>
                             </a>
                         </li>
-                        <li class="nav-item start active open">
-                            <a href="<?php echo site_url('C_tiket_admin') ?>">
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-settings"></i>
+                                <span class="title">Context Management</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                            <li class="nav-item  ">
+                                    <a href="<?php echo site_url('C_admin/category') ?>" class="nav-link ">
+                                        <span class="title">Edit Category</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="<?php echo site_url('C_admin/client') ?>" class="nav-link ">
+                                        <span class="title"> Client Page</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="<?php echo site_url('C_tiket_admin') ?>" class="nav-link nav-toggle">
                                 <i class="fa fa-ticket"></i>
-                                <span class="title">Ticket</span> 
-                                <span class="selected"></span>
+                                <span class="title">Ticket</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                        <a href="<?php echo site_url('C_user_admin') ?>">
+                            <a href="<?php echo site_url('C_user_admin') ?>" class="nav-link nav-toggle">
                                 <i class="fa fa-users"></i>
                                 <span class="title">Users</span>
                             </a>
                         </li>
-                        <li class="nav-item  ">
-                            <a href="news_admin.html" class="nav-link nav-toggle">
+                        <li class="nav-item">
+                        <a href="<?php echo site_url('C_department_admin') ?>">
+                                <i class="fa fa-building"></i>
+                                <span class="title">Departments</span>
+                            </a>
+                        </li>
+                        <li class="nav-item start active open ">
+                            <a href="<?php echo site_url('C_news_admin') ?>" class="nav-link nav-toggle">
                                 <i class="fa fa-newspaper-o"></i>
                                 <span class="title">News</span>
+                                <span class="selected"></span>
                             </a>
                         </li>
                         <li class="nav-item  ">
-                            <a href="performa.html" class="nav-link nav-toggle">
+                            <a href="<?php echo site_url('C_performa')?>" class="nav-link nav-toggle">
                                 <i class="fa fa-line-chart"></i>
                                 <span class="title">Peformance</span>
                             </a>
@@ -262,6 +244,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <!-- END SIDEBAR -->
             </div>
+            <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <!-- BEGIN CONTENT BODY -->
@@ -270,9 +253,9 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="page-head">
                         <!-- BEGIN PAGE TITLE -->
                         <div class="page-title">
-                            <h1>Ticket
+                            <h1>Add News
+                                <small>fill the following formn</small>
                             </h1>
-                            <br>
                         </div>
                         <!-- END PAGE TITLE -->
                     </div>
@@ -280,57 +263,77 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- BEGIN PAGE BREADCRUMB -->
                     <!-- END PAGE BREADCRUMB -->
                     <!-- BEGIN PAGE BASE CONTENT -->
-                    
-                    
-                    <div class="inbox">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="inbox-body">
-                                    <div class="inbox-header">
-                                        <h1 class="pull-left">Ticket</h1>
-                                        <form class="form-inline pull-right" action="index.html">
-                                            <div class="input-group input-medium">
-                                                <input type="text" class="form-control" placeholder="Search">
-                                                <span class="input-group-btn">
-                                                    <button type="submit" class="btn green">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXTRAS PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                <div class="caption font-red-sunglo">
+                                        <h3><i class="fa fa-newspaper-o font-red-sunglo"></i>
+                                        <span class="caption-subject bold uppercase">News Form</span></h3>
                                     </div>
-                                    <div class="inbox-content"> </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <form class="form" action="<?php echo site_url('C_news_admin/newNews') ?>" enctype="multipart/form-data" method="post">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label>Title</label>
+                                                <div class="input-icon right">
+                                                    <i class=" font-blue"></i>
+                                                    <input type="text" class="form-control" name="subject" placeholder="Subject"> </div>
+                                            </div>
+                                            <div class="form-group last">
+                                                <div class="col-md-12">
+                                                    <textarea type="text" class="form-control" name="message" id="summernote_1"></textarea>
+                                                </div> 
+                                            </div>
+                                            <div class="form-group last">
+                                                <label class="control-label col-md-15">Image Upload</label>
+                                                <div class="col-md-15">
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                                                        <div>
+                                                            <span class="btn default btn-file">
+                                                                <span class="fileinput-new"> Select image </span>
+                                                                <span class="fileinput-exists"> Change </span>
+                                                                <input type="file" name="berkas"> </span>
+                                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <button type="submit" class="btn green">
+                                                        <i class="fa fa-check"></i> Submit</button>
+                                                        <a class="btn default" href="<?php echo site_url('C_news_admin')?>"> Cancel
+                                                        </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- END PAGE BASE CONTENT -->
+                            <!-- END SAMPLE FORM PORTLET-->
                 </div>
                 <!-- END CONTENT BODY -->
             </div>
             <!-- END CONTENT -->
-    
-            <!-- END QUICK SIDEBAR -->
         </div>
         <!-- END CONTAINER -->
-        <!-- BEGIN FOOTER -->
-        <div class="page-footer">
-            <div class="page-footer-inner"> 2016 &copy; Metronic Theme By
-                <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
-                <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
-            </div>
-            <div class="scroll-to-top">
-                <i class="icon-arrow-up"></i>
-            </div>
-        </div>
-        <!-- END QUICK NAV -->
         <!--[if lt IE 9]>
 <script src="<?php echo base_url(); ?>/assets/global/plugins/respond.min.js"></script>
 <script src="<?php echo base_url(); ?>/assets/global/plugins/excanvas.min.js"></script> 
 <script src="<?php echo base_url(); ?>/assets/global/plugins/ie8.fix.min.js"></script> 
 <![endif]-->
-        <!-- BEGIN CORE PLUGINS -->
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+       <!-- BEGIN CORE PLUGINS -->
+       <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
@@ -350,51 +353,16 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="<?php echo base_url(); ?>/assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="<?php echo base_url(); ?>/assets/apps/scripts/tiket.min.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
-        <!-- BEGIN THEME LAYOUT SCRIPTS -->
-        <script src="<?php echo base_url(); ?>/assets/layouts/layout4/scripts/layout.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/layouts/layout4/scripts/demo.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
-        <!-- END THEME LAYOUT SCRIPTS -->
-        <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/moment.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/horizontal-timeline/horizontal-timeline.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>/assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
-        <!-- END PAGE LEVEL PLUGINS -->
-        <!-- BEGIN THEME GLOBAL SCRIPTS -->
-        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="<?php echo base_url(); ?>/assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>/assets/pages/scripts/components-editors.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="<?php echo base_url(); ?>/assets/layouts/layout4/scripts/layout.min.js" type="text/javascript"></script>
