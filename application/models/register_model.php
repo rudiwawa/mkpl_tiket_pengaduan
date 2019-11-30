@@ -19,8 +19,8 @@
         $fullname = $this->input->post('fullname');
         $instansi = $this->input->post('instansi');
         $alamat = $this->input->post('alamat_instansi');
-        $kota = $this->input->post('kota_instansi');
-        $provinsi = $this->input->post('provinsi_instansi');
+        $kota = $this->input->post('kota');
+        $provinsi = $this->input->post('provinsi');
         $telp = $this->input->post('no_telp');
         $data = array(
           $email,
